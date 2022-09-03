@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   def index
+    @user= User.all
   end
 
   def show
-     @user= User.find(params[:id])
+    @user= User.find(params[:id])
   end
 
   def edit
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:Introduction)
+    params.require(:user).permit(:name,:Introduction,:image)
   end
 
 end
