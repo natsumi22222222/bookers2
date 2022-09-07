@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     @book= Book.new
     @user= User.all
@@ -7,12 +8,12 @@ class UsersController < ApplicationController
   def show
     @user= User.find(params[:id])
     @books=@user.books
-    @books= Book.all
-     @book= Book.new
+    @book= Book.new
   end
 
   def edit
     @user= User.find(params[:id])
+    flash[:notice]= 'You have updated user successfully.'
   end
 
   def update

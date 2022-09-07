@@ -1,5 +1,4 @@
 <% if user_signed_in? %>
-  <p id= "notice">
       <div class= "col-md-3">
         <h2>User info</h2>
         <%= image_tag current_user.get_profile_image(100,100) %>
@@ -20,7 +19,7 @@
           <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
             <i class="fas fa-user-cog"></i>
           <% end %>
-          <%= form_with model: @book, url: books_path do |f|%>
+          <%= form_with model: book, url: books_path do |f|%>
             <h2 class= "mt-3">New Book</h2>
             <form>
               <div class= "form-group">
